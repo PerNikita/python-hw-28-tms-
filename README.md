@@ -25,6 +25,30 @@ print(circle.length())
 счета, имя владельца, баланс и методы пополнения и снятия денег со
 счета. Создайте несколько объектов этого класса и вызовите его методы
 для каждого объекта.
+
+```
+class Bank:
+    def __init__(self, name_holder, balans):
+        self.name_holder = name_holder
+        self.balans = int(balans)
+
+
+    def replenish(self, amount):
+        if amount > 0:
+            self.balans += amount
+    
+    def pay(self, amount):
+        if 0 < amount <= self.balans:
+            self.balans -= amount
+
+bank = Bank("Nikita", "9999")
+bank.replenish(999)
+print(f"Person: {bank.name_holder} balans: {bank.balans}")
+
+bank.pay(999)
+print(f"Person: {bank.name_holder} balans: {bank.balans}")
+```
+
 3 Создайте класс "Студент", который имеет атрибуты имя, возраст и
 средний балл. Создайте методы для вычисления среднего балла и
 определения статуса студента (отличник, хорошист, троечник).Создайте
