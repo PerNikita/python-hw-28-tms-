@@ -9,10 +9,16 @@ class Circle:
     def __init__(self, color, radius):
         self.color = color
         self.radius = radius
-    
+    def square(self):
+        return f"Площадь круга {int(self.radius) * int(self.radius) * 3.14}"
+    def length(self):
+        return f"Длина окружности: {2 * int(self.radius) * 3.14}"
+
 circle = Circle("blue", "10")
 print(circle.color)
 print(circle.radius)
+print(circle.square())
+print(circle.length())
 ```
 
 2 Создайте класс "Банковский счет", который имеет атрибуты номер
