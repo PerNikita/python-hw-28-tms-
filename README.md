@@ -54,6 +54,35 @@ print(f"Person: {bank.name_holder} balans: {bank.balans}")
 определения статуса студента (отличник, хорошист, троечник).Создайте
 несколько объектов этого класса и вызовите его методы для каждого
 объекта.
+
+```
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+    def avg(self, value):
+        
+        self.avg = sum(value) / len(value)
+        return self.avg
+    
+    def status(self, avg):
+        if int(avg) < 5:
+            self.__status = "bad"
+        if int(avg) > 5:
+            self.__status = "good"
+        return self.__status
+
+student_bad = Student("Nikita", "29")
+student_bad.avg([3, 3, 3, 3, 3])
+print (f"Студент {student_bad.name} имеет средний бал {student_bad.avg}.\nСтатус студента {student_bad.status(student_bad.avg)}")
+
+student_good = Student("Vasya", "33")
+student_good.avg([7, 7, 7, 7, 7])
+print (f"Студент {student_good.name} имеет средний бал {student_good.avg}.\nСтатус студента {student_good.status(student_good.avg)}")
+```
+
 4 Создайте класс "Книга", который имеет атрибуты название, автор и год
 издания. Создайте методы для получения и изменения этих
 атрибутов.Создайте несколько объектов этого класса и вызовите его
